@@ -3,6 +3,9 @@
 run-dist:
 	./build/install/app/bin/app
 
+run:
+	gradle run
+
 clean:
 	gradle clean
 
@@ -10,9 +13,8 @@ build:
 	gradle clean
 	gradle build
 
-build-run:
+install:
 	gradle clean
 	gradle installDist
-	./build/install/app/bin/app
 
 .PHONY: build
