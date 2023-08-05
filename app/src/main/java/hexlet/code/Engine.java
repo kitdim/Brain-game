@@ -1,11 +1,13 @@
 package hexlet.code;
 
-import hexlet.code.game.*;
+import hexlet.code.game.Even;
+import hexlet.code.game.Calc;
+import hexlet.code.game.Nod;
 
 import java.util.Scanner;
 
 public class Engine {
-    private static final Scanner input = new Scanner(System.in);
+    private static final Scanner inputOfUser = new Scanner(System.in);
     private static String userName;
     private static String result;
     private static String answer;
@@ -51,7 +53,7 @@ public class Engine {
             evenGame.setNumber(ROUND_RANDOM_NUMBERS);
             System.out.println("Question: " + evenGame.getNumber());
             System.out.print("Your answer: ");
-            answer = input.next().toLowerCase();
+            answer = inputOfUser.next().toLowerCase();
             result = evenGame.isEven() ? "yes" : "no";
             if (isFalseAnswer()) {
                 return;
@@ -64,28 +66,33 @@ public class Engine {
             calcGame.setOperand1(ROUND_RANDOM_NUMBERS);
             calcGame.setOperand2((ROUND_RANDOM_NUMBERS));
             calcGame.setOperation(COUNT_OPERATIONS);
-            System.out.println("Question: " + calcGame.getOperand1() + calcGame.getOperation() + calcGame.getOperand2());
+            System.out.println("Question: "
+                    + calcGame.getOperand1()
+                    + calcGame.getOperation()
+                    + calcGame.getOperand2());
             System.out.print("Your answer: ");
-            answer = input.next();
+            answer = inputOfUser.next();
             result = calcGame.calculation();
-            if(isFalseAnswer()) {
+            if (isFalseAnswer()) {
                 return;
             }
         }
     }
+
     public static void runNodGame(Nod nodGame) {
         for (int i = COUNT_OF_ATTEMPTS; i > 0; i--) {
             nodGame.setOperand1(ROUND_RANDOM_NUMBERS);
             nodGame.setOperand2(ROUND_RANDOM_NUMBERS);
             System.out.println("Question: " + nodGame.getOperand1() + " " + nodGame.getOperand2());
             System.out.print("Your answer: ");
-            answer = input.next();
+            answer = inputOfUser.next();
             result = nodGame.getNod();
-            if(isFalseAnswer()) {
+            if (isFalseAnswer()) {
                 return;
             }
         }
     }
+
     private static boolean isFalseAnswer() {
         if (result.equals(answer)) {
             System.out.println("Correct!");
@@ -108,7 +115,7 @@ public class Engine {
 
     private static String getUserName() {
         System.out.print("May i have your name? ");
-        userName = input.next();
+        userName = inputOfUser.next();
         return userName;
     }
 }

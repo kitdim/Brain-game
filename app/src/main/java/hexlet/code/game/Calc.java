@@ -48,6 +48,8 @@ public class Calc {
             case '*':
                 result = operand1 * operand2;
                 break;
+            default:
+                break;
         }
         return Integer.toString(result);
     }
