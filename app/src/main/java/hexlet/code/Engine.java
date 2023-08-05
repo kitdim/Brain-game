@@ -36,6 +36,10 @@ public class Engine {
                 System.out.println(calcGame.getTitle());
                 runCalcGame(calcGame);
                 break;
+            case 4:
+                Nod nodGame = new Nod();
+                System.out.println(nodGame.getTitle());
+                runNodGame(nodGame);
             default:
                 break;
         }
@@ -69,7 +73,19 @@ public class Engine {
             }
         }
     }
-
+    public static void runNodGame(Nod nodGame) {
+        for (int i = COUNT_OF_ATTEMPTS; i > 0; i--) {
+            nodGame.setOperand1(ROUND_RANDOM_NUMBERS);
+            nodGame.setOperand2(ROUND_RANDOM_NUMBERS);
+            System.out.println("Question: " + nodGame.getOperand1() + " " + nodGame.getOperand2());
+            System.out.print("Your answer: ");
+            answer = input.next();
+            result = nodGame.getNod();
+            if(isFalseAnswer()) {
+                return;
+            }
+        }
+    }
     private static boolean isFalseAnswer() {
         if (result.equals(answer)) {
             System.out.println("Correct!");
