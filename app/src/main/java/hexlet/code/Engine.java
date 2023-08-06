@@ -147,7 +147,7 @@ public class Engine {
 
     private static void showResultGame() {
         if (countBadAnswers == 0) {
-            System.out.println("Congratulation, " + userName + "!");
+            System.out.println("Congratulations, " + userName + "!");
         } else {
             System.out.println("Let's try again, " + userName + "!");
         }
