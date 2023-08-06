@@ -10,7 +10,7 @@ public class Progression {
     private int missNum;
 
     public Progression(byte minLength, byte maxLength) {
-        title = "What number is missing in this progression?";
+        title = "What number is missing in the progression?";
         this.minLength = minLength;
         this.maxLength = maxLength;
     }
