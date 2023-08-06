@@ -9,3 +9,6 @@
 [Complite](https://asciinema.org/a/bW4PHVwMSaxUw43tXOR7oKx8r)
 ### Task 5
 [Complite](https://asciinema.org/a/63rKEjFXNUba6kfJWN8MCzT0y)
+### Task 6
+[Complite](https://asciinema.org/a/KZAGpxL3VkA1ZqaKmKBR6g9uF)
+
