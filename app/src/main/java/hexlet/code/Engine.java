@@ -17,8 +17,6 @@ public final class Engine {
     private static final byte COUNT_OPERATIONS = 3;
     private static final byte ROUND_RANDOM_NUMBERS = 100;
     private static final byte ROUND_RANDOM_NUMBERS_OF_PROGRESSION = 50;
-    private static final byte MIN_LENGTH_PROGRESSION = 5;
-    private static final byte MAX_LENGTH_PROGRESSION = 10;
     private static byte countBadAnswers = 0;
 
 
@@ -50,7 +48,7 @@ public final class Engine {
                 runNodGame(nodGame);
                 break;
             case 5:
-                Progression progressionGame = new Progression(MIN_LENGTH_PROGRESSION, MAX_LENGTH_PROGRESSION);
+                Progression progressionGame = new Progression();
                 System.out.println(progressionGame.getTitle());
                 runProgressionGame(progressionGame);
                 break;
