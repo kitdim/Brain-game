@@ -3,7 +3,7 @@ package hexlet.code.game;
 import java.util.Random;
 
 public class Calc {
-    private final String title;
+    private final String TITLE;
     private final char[] operations;
     private char operation;
     private int operand1;
@@ -11,12 +11,12 @@ public class Calc {
     private int result;
     public Calc() {
         operations = new char[]{'+', '-', '*'};
-        title = "What is the result of the expression?";
+        TITLE = "What is the result of the expression?";
         result = 0;
     }
 
     public String getTitle() {
-        return title;
+        return TITLE;
     }
     public int getOperand1() {
         return operand1;
