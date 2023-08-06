@@ -81,7 +81,9 @@ public class Engine {
             calcGame.setOperation(COUNT_OPERATIONS);
             System.out.println("Question: "
                     + calcGame.getOperand1()
+                    + " "
                     + calcGame.getOperation()
+                    + " "
                     + calcGame.getOperand2());
             System.out.print("Your answer: ");
             answer = inputOfUser.next();
