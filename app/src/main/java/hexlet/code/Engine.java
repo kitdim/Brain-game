@@ -47,14 +47,17 @@ public class Engine {
                 Nod nodGame = new Nod();
                 System.out.println(nodGame.getTitle());
                 runNodGame(nodGame);
+                break;
             case 5:
                 Progression progressionGame = new Progression(MIN_LENGTH_PROGRESSION, MAX_LENGTH_PROGRESSION);
                 System.out.println(progressionGame.getTitle());
                 runProgressionGame(progressionGame);
+                break;
             case 6:
                 Prime primeGame = new Prime();
                 System.out.println(primeGame.getTitle());
                 runPrimeGame(primeGame);
+                break;
             default:
                 break;
         }
