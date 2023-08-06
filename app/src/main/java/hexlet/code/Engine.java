@@ -154,7 +154,7 @@ public class Engine {
     }
 
     private static String getUserName() {
-        System.out.print("May i have your name? ");
+        System.out.print("May I have your name? ");
         userName = inputOfUser.next();
         return userName;
     }
