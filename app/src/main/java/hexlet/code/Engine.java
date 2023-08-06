@@ -9,7 +9,7 @@ import hexlet.code.game.Even;
 import java.util.Scanner;
 
 public class Engine {
-    private static Scanner inputOfUser = new Scanner(System.in);
+    private static final Scanner inputOfUser = new Scanner(System.in);
     private static String userName;
     private static String result;
     private static String answer;

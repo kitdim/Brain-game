@@ -3,9 +3,9 @@ package hexlet.code.game;
 import java.util.Random;
 
 public class Progression {
-    private String title;
-    private byte minLength;
-    private byte maxLength;
+    private final String title;
+    private final byte minLength;
+    private final byte maxLength;
     private int[] progression;
     private int missNum;
 
