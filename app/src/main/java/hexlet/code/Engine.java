@@ -49,7 +49,7 @@ public final class Engine {
                 break;
             case 5:
                 Progression progressionGame = new Progression();
-                System.out.println(progressionGame.getTitle());
+                System.out.println(Progression.TITLE);
                 runProgressionGame(progressionGame);
                 break;
             case 6:
