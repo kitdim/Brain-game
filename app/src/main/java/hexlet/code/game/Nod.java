@@ -3,18 +3,18 @@ package hexlet.code.game;
 import java.util.Random;
 
 public class Nod {
-    private final String title;
+    private final String TITLE;
     private int operand1;
     private int operand2;
     private int nod;
 
     public Nod() {
-        title = "What number is gcd of two numbers?";
+        TITLE = "What number is gcd of two numbers?";
         nod = 0;
     }
 
     public String getTitle() {
-        return title;
+        return TITLE;
     }
 
     public int getOperand1() {
