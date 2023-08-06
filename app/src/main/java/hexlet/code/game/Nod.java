@@ -2,7 +2,7 @@ package hexlet.code.game;
 
 import java.util.Random;
 
-public class Nod {
+public final class Nod {
     private final String title;
     private int operand1;
     private int operand2;

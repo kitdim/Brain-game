@@ -2,7 +2,7 @@ package hexlet.code.game;
 
 import java.util.Random;
 
-public class Prime {
+public final class Prime {
     private String title;
     private int number;
 

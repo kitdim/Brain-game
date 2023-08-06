@@ -2,7 +2,7 @@ package hexlet.code.game;
 
 import java.util.Random;
 
-public class Progression {
+public final class Progression {
     private final String title;
     private final byte minLength;
     private final byte maxLength;

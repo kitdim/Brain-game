@@ -2,7 +2,7 @@ package hexlet.code.game;
 
 import java.util.Random;
 
-public class Even {
+public final class Even {
     private final String title;
     private int number;
 

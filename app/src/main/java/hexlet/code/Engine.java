@@ -8,7 +8,7 @@ import hexlet.code.game.Even;
 
 import java.util.Scanner;
 
-public class Engine {
+public final class Engine {
     private static final Scanner scanner = new Scanner(System.in);
     private static String userName;
     private static String result;
