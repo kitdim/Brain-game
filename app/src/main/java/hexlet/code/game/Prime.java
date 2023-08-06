@@ -2,15 +2,11 @@ package hexlet.code.game;
 
 import java.util.Random;
 
-public class Prime {
-    private final String title;
+public final class Prime {
     private int number;
 
     public Prime() {
-        title = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    }
-    public String getTitle() {
-        return title;
+        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
     }
     public int getPrime() {
         return number;
