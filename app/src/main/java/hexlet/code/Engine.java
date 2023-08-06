@@ -3,6 +3,7 @@ package hexlet.code;
 import hexlet.code.game.Even;
 import hexlet.code.game.Calc;
 import hexlet.code.game.Nod;
+import hexlet.code.game.Progression;
 
 import java.util.Scanner;
 
@@ -11,9 +12,12 @@ public class Engine {
     private static String userName;
     private static String result;
     private static String answer;
-    private static final byte ROUND_RANDOM_NUMBERS = 100;
     private static final byte COUNT_OF_ATTEMPTS = 3;
     private static final byte COUNT_OPERATIONS = 3;
+    private static final byte ROUND_RANDOM_NUMBERS = 100;
+    private static final byte ROUND_RANDOM_NUMBERS_OF_PROGRESSION = 50;
+    private static final byte MIN_LENGTH_PROGRESSION = 5;
+    private static final byte MAX_LENGTH_PROGRESSION = 10;
     private static byte countBadAnswers = 0;
 
 
@@ -42,6 +46,10 @@ public class Engine {
                 Nod nodGame = new Nod();
                 System.out.println(nodGame.getTitle());
                 runNodGame(nodGame);
+            case 5:
+                Progression progressionGame = new Progression(MIN_LENGTH_PROGRESSION, MAX_LENGTH_PROGRESSION);
+                System.out.println(progressionGame.getTitle());
+                runProgressionGame(progressionGame);
             default:
                 break;
         }
@@ -93,6 +101,19 @@ public class Engine {
         }
     }
 
+    private static void runProgressionGame(Progression progressionGame) {
+        for (int i = COUNT_OF_ATTEMPTS; i > 0; i--) {
+            progressionGame.setProgression(ROUND_RANDOM_NUMBERS_OF_PROGRESSION);
+            System.out.print("Question: ");
+            progressionGame.showProgression();
+            System.out.print("Your answer: ");
+            answer = Integer.toString(inputOfUser.nextInt());
+            result = progressionGame.getMissNum();
+            if (isFalseAnswer()) {
+                return;
+            }
+        }
+    }
     private static boolean isFalseAnswer() {
         if (result.equals(answer)) {
             System.out.println("Correct!");
