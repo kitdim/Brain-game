@@ -7,7 +7,7 @@ public class Even {
     private int number;
 
     public Even() {
-        title = "Answer 'yes' if number is even otherwise answer 'no'.";
+        title = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     }
 
     public String getTitle() {
