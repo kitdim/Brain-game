@@ -56,6 +56,7 @@ public class Engine {
                 break;
             case 6:
                 Prime primeGame = new Prime();
+                System.out.println(primeGame.getTitle());
                 runPrimeGame(primeGame);
                 break;
             default:
