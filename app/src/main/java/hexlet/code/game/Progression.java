@@ -27,9 +27,9 @@ public class Progression {
         missNum = progression[new Random().nextInt(progression.length)];
         for (var item : progression) {
             if (item == missNum) {
-                System.out.print("..");
+                System.out.print(".. ");
             } else {
-                System.out.print(" " + item + " ");
+                System.out.print(item + " ");
             }
         }
         System.out.println();
