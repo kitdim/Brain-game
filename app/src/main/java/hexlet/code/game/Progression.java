@@ -4,8 +4,8 @@ import java.util.Random;
 
 public final class Progression {
     public final static String TITLE = "What number is missing in the progression?";
-    private final static byte MIN_LENGTH = 5;
-    private final static byte MAX_LENGTH = 10;
+    private final byte MIN_LENGTH = 5;
+    private final byte MAX_LENGTH = 10;
     private int[] progression;
     private int missNum;
 
