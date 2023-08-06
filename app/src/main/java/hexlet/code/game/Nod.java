@@ -9,7 +9,7 @@ public class Nod {
     private int nod;
 
     public Nod() {
-        title = "What number is gcd of two numbers?";
+        title = "Find the greatest common divisor of given numbers.";
         nod = 0;
     }
 
