@@ -3,14 +3,14 @@ package hexlet.code.game;
 import java.util.Random;
 
 public class Prime {
-    private final String TITLE;
+    private String title;
     private int number;
 
     public Prime() {
-        TITLE = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        title = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     }
     public String getTitle() {
-        return TITLE;
+        return title;
     }
     public int getPrime() {
         return number;
@@ -20,8 +20,9 @@ public class Prime {
     }
     public boolean isPrime() {
         for (int i = 2; i <= number / 2; ++i) {
-            if (number % i == 0)
+            if (number % i == 0) {
                 return false;
+            }
         }
         return true;
     }

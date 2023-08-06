@@ -3,15 +3,15 @@ package hexlet.code.game;
 import java.util.Random;
 
 public class Even {
-    private final String TITLE;
+    private String title;
     private int number;
 
     public Even() {
-        TITLE = "Answer 'yes' if number is even otherwise answer 'no'.";
+        title = "Answer 'yes' if number is even otherwise answer 'no'.";
     }
 
     public String getTitle() {
-        return TITLE;
+        return title;
     }
 
     public int getNumber() {

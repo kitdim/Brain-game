@@ -1,11 +1,15 @@
 package hexlet.code;
 
-import hexlet.code.game.*;
+import hexlet.code.game.Prime;
+import hexlet.code.game.Progression;
+import hexlet.code.game.Calc;
+import hexlet.code.game.Nod;
+import hexlet.code.game.Even;
 
 import java.util.Scanner;
 
 public class Engine {
-    private static final Scanner inputOfUser = new Scanner(System.in);
+    private static Scanner inputOfUser = new Scanner(System.in);
     private static String userName;
     private static String result;
     private static String answer;
@@ -115,6 +119,7 @@ public class Engine {
             }
         }
     }
+
     private static void runPrimeGame(Prime primeGame) {
         for (int i = COUNT_OF_ATTEMPTS; i > 0; i--) {
             primeGame.setNumber(ROUND_RANDOM_NUMBERS);
@@ -127,6 +132,7 @@ public class Engine {
             }
         }
     }
+
     private static boolean isFalseAnswer() {
         if (result.equals(answer)) {
             System.out.println("Correct!");
