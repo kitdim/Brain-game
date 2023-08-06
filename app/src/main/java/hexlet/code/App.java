@@ -14,6 +14,7 @@ public class App {
                 3 - Calc
                 4 - NOD
                 5 - Progression
+                6 - Prime
                 0 - Exit""");
         System.out.print("Your change: ");
         numberOfGame = input.nextByte();
