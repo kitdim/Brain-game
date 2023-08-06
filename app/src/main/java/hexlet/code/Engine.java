@@ -1,9 +1,6 @@
 package hexlet.code;
 
-import hexlet.code.game.Even;
-import hexlet.code.game.Calc;
-import hexlet.code.game.Nod;
-import hexlet.code.game.Progression;
+import hexlet.code.game.*;
 
 import java.util.Scanner;
 
@@ -50,6 +47,10 @@ public class Engine {
                 Progression progressionGame = new Progression(MIN_LENGTH_PROGRESSION, MAX_LENGTH_PROGRESSION);
                 System.out.println(progressionGame.getTitle());
                 runProgressionGame(progressionGame);
+            case 6:
+                Prime primeGame = new Prime();
+                System.out.println(primeGame.getTitle());
+                runPrimeGame(primeGame);
             default:
                 break;
         }
@@ -109,6 +110,18 @@ public class Engine {
             System.out.print("Your answer: ");
             answer = Integer.toString(inputOfUser.nextInt());
             result = progressionGame.getMissNum();
+            if (isFalseAnswer()) {
+                return;
+            }
+        }
+    }
+    private static void runPrimeGame(Prime primeGame) {
+        for (int i = COUNT_OF_ATTEMPTS; i > 0; i--) {
+            primeGame.setNumber(ROUND_RANDOM_NUMBERS);
+            System.out.println("Question: " + primeGame.getPrime());
+            System.out.print("Your answer: ");
+            answer = inputOfUser.next().toLowerCase();
+            result = primeGame.isPrime() ? "yes" : "no";
             if (isFalseAnswer()) {
                 return;
             }
