@@ -14,52 +14,52 @@ public final class Engine {
     private static final byte COUNT_OPERATIONS = 3;
     private static final byte ROUND_RANDOM_NUMBERS = 100;
     private static final byte ROUND_RANDOM_NUMBERS_OF_PROGRESSION = 50;
+    private static byte countBadAnswers = 0;
     private static String userName;
     private static String result;
     private static String answer;
-    private static byte countBadAnswers = 0;
 
 
     public static void game(byte numberGame) {
         switch (numberGame) {
             case 1 -> {
                 userName = getUserName();
-                System.out.println("Hello, " + userName + "!");
+                hello(userName);
                 return;
             }
             case 2 -> {
                 userName = getUserName();
-                System.out.println("Hello, " + userName + "!");
+                hello(userName);
                 Even evenGame = new Even();
-                System.out.println(evenGame.TITLE);
+                System.out.println(evenGame.title);
                 runEvenGame(evenGame);
             }
             case 3 -> {
                 userName = getUserName();
-                System.out.println("Hello, " + userName + "!");
+                hello(userName);
                 Calc calcGame = new Calc();
-                System.out.println(calcGame.TITLE);
+                System.out.println(calcGame.title);
                 runCalcGame(calcGame);
             }
             case 4 -> {
                 userName = getUserName();
-                System.out.println("Hello, " + userName + "!");
+                hello(userName);
                 Nod nodGame = new Nod();
-                System.out.println(nodGame.TITLE);
+                System.out.println(nodGame.title);
                 runNodGame(nodGame);
             }
             case 5 -> {
                 userName = getUserName();
-                System.out.println("Hello, " + userName + "!");
+                hello(userName);
                 Progression progressionGame = new Progression();
-                System.out.println(progressionGame.TITLE);
+                System.out.println(progressionGame.title);
                 runProgressionGame(progressionGame);
             }
             case 6 -> {
                 userName = getUserName();
-                System.out.println("Hello, " + userName + "!");
+                hello(userName);
                 Prime primeGame = new Prime();
-                System.out.println(primeGame.TITLE);
+                System.out.println(primeGame.title);
                 runPrimeGame(primeGame);
             }
             default -> {
@@ -166,5 +166,9 @@ public final class Engine {
         System.out.print("May I have your name? ");
         userName = SCANNER.next();
         return userName;
+    }
+
+    private static void hello(String userName) {
+        System.out.println("Hello, " + userName + "!");
     }
 }
