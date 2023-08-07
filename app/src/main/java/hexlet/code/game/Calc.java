@@ -3,16 +3,14 @@ package hexlet.code.game;
 import java.util.Random;
 
 public final class Calc {
-    public final static String TITLE = "What is the result of the expression?";
+    public final String TITLE = "What is the result of the expression?";
     private final char[] operations;
     private char operation;
     private int operand1;
     private int operand2;
-    private int result;
 
     public Calc() {
         operations = new char[]{'+', '-', '*'};
-        result = 0;
     }
 
     public int getOperand1() {
@@ -41,12 +39,18 @@ public final class Calc {
 
     public String calculation() {
         switch (operation) {
-            case '+' -> result = operand1 + operand2;
-            case '-' -> result = operand1 - operand2;
-            case '*' -> result = operand1 * operand2;
+            case '+' -> {
+                return Integer.toString(operand1 + operand2);
+            }
+            case '-' -> {
+                return Integer.toString(operand1 - operand2);
+            }
+            case '*' -> {
+                return Integer.toString(operand1 * operand2);
+            }
             default -> {
             }
         }
-        return Integer.toString(result);
+        return null;
     }
 }

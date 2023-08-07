@@ -3,7 +3,9 @@ package hexlet.code.game;
 import java.util.Random;
 
 public final class Progression {
-    public final static String TITLE = "What number is missing in the progression?";
+    public final String TITLE = "What number is missing in the progression?";
+    private final static byte MIN = 5;
+    private final static byte MAX = 10;
     private int[] progression;
     private int missNum;
 
@@ -24,10 +26,8 @@ public final class Progression {
     }
 
     public void setProgression(byte round) {
-        byte min = 5;
-        byte max = 10;
         int number = new Random().nextInt(round) + 1;
-        progression = new int[new Random().nextInt(min, max)];
+        progression = new int[new Random().nextInt(MIN, MAX)];
         for (int i = 0; i < progression.length; i++) {
             progression[i] = number * (i + 1);
         }

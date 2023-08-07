@@ -9,7 +9,7 @@ import hexlet.code.game.Even;
 import java.util.Scanner;
 
 public final class Engine {
-    private static final Scanner scanner = new Scanner(System.in);
+    private static final Scanner SCANNER = new Scanner(System.in);
     private static final byte COUNT_OF_ATTEMPTS = 3;
     private static final byte COUNT_OPERATIONS = 3;
     private static final byte ROUND_RANDOM_NUMBERS = 100;
@@ -21,40 +21,45 @@ public final class Engine {
 
 
     public static void game(byte numberGame) {
-
-        if (numberGame == 0) {
-            return;
-        } else if (numberGame == 1) {
-            userName = getUserName();
-            System.out.println("Hello, " + userName + "!");
-            return;
-        }
-        userName = getUserName();
-        System.out.println("Hello, " + userName + "!");
         switch (numberGame) {
+            case 1 -> {
+                userName = getUserName();
+                System.out.println("Hello, " + userName + "!");
+                return;
+            }
             case 2 -> {
+                userName = getUserName();
+                System.out.println("Hello, " + userName + "!");
                 Even evenGame = new Even();
-                System.out.println(Even.TITLE);
+                System.out.println(evenGame.TITLE);
                 runEvenGame(evenGame);
             }
             case 3 -> {
+                userName = getUserName();
+                System.out.println("Hello, " + userName + "!");
                 Calc calcGame = new Calc();
-                System.out.println(Calc.TITLE);
+                System.out.println(calcGame.TITLE);
                 runCalcGame(calcGame);
             }
             case 4 -> {
+                userName = getUserName();
+                System.out.println("Hello, " + userName + "!");
                 Nod nodGame = new Nod();
-                System.out.println(Nod.TITLE);
+                System.out.println(nodGame.TITLE);
                 runNodGame(nodGame);
             }
             case 5 -> {
+                userName = getUserName();
+                System.out.println("Hello, " + userName + "!");
                 Progression progressionGame = new Progression();
-                System.out.println(Progression.TITLE);
+                System.out.println(progressionGame.TITLE);
                 runProgressionGame(progressionGame);
             }
             case 6 -> {
+                userName = getUserName();
+                System.out.println("Hello, " + userName + "!");
                 Prime primeGame = new Prime();
-                System.out.println(Prime.TITLE);
+                System.out.println(primeGame.TITLE);
                 runPrimeGame(primeGame);
             }
             default -> {
@@ -68,7 +73,7 @@ public final class Engine {
             evenGame.setNumber(ROUND_RANDOM_NUMBERS);
             System.out.println("Question: " + evenGame.getNumber());
             System.out.print("Your answer: ");
-            answer = scanner.next().toLowerCase();
+            answer = SCANNER.next().toLowerCase();
             result = evenGame.isEven() ? "yes" : "no";
             if (isFalseAnswer()) {
                 return;
@@ -88,7 +93,7 @@ public final class Engine {
                     + " "
                     + calcGame.getOperand2());
             System.out.print("Your answer: ");
-            answer = scanner.next();
+            answer = SCANNER.next();
             result = calcGame.calculation();
             if (isFalseAnswer()) {
                 return;
@@ -102,7 +107,7 @@ public final class Engine {
             nodGame.setOperand2(ROUND_RANDOM_NUMBERS);
             System.out.println("Question: " + nodGame.getOperand1() + " " + nodGame.getOperand2());
             System.out.print("Your answer: ");
-            answer = scanner.next();
+            answer = SCANNER.next();
             result = nodGame.getNod();
             if (isFalseAnswer()) {
                 return;
@@ -116,7 +121,7 @@ public final class Engine {
             System.out.print("Question: ");
             progressionGame.showProgression();
             System.out.print("Your answer: ");
-            answer = Integer.toString(scanner.nextInt());
+            answer = Integer.toString(SCANNER.nextInt());
             result = progressionGame.getMissNum();
             if (isFalseAnswer()) {
                 return;
@@ -129,7 +134,7 @@ public final class Engine {
             primeGame.setNumber(ROUND_RANDOM_NUMBERS);
             System.out.println("Question: " + primeGame.getPrime());
             System.out.print("Your answer: ");
-            answer = scanner.next().toLowerCase();
+            answer = SCANNER.next().toLowerCase();
             result = primeGame.isPrime() ? "yes" : "no";
             if (isFalseAnswer()) {
                 return;
@@ -159,7 +164,7 @@ public final class Engine {
 
     private static String getUserName() {
         System.out.print("May I have your name? ");
-        userName = scanner.next();
+        userName = SCANNER.next();
         return userName;
     }
 }
