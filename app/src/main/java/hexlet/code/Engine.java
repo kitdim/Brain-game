@@ -25,44 +25,46 @@ public final class Engine {
             case 1 -> {
                 userName = getUserName();
                 hello(userName);
-                return;
             }
             case 2 -> {
                 userName = getUserName();
                 hello(userName);
                 Even evenGame = new Even();
                 runEvenGame(evenGame);
+                showResultGame();
             }
             case 3 -> {
                 userName = getUserName();
                 hello(userName);
                 Calc calcGame = new Calc();
                 runCalcGame(calcGame);
+                showResultGame();
             }
             case 4 -> {
                 userName = getUserName();
                 hello(userName);
                 Nod nodGame = new Nod();
                 runNodGame(nodGame);
+                showResultGame();
             }
             case 5 -> {
                 userName = getUserName();
                 hello(userName);
                 Progression progressionGame = new Progression();
                 runProgressionGame(progressionGame);
+                showResultGame();
             }
             case 6 -> {
                 userName = getUserName();
                 hello(userName);
                 Prime primeGame = new Prime();
                 runPrimeGame(primeGame);
+                showResultGame();
             }
             default -> {
             }
         }
-        showResultGame();
     }
-
     private static void runEvenGame(Even evenGame) {
         for (int i = COUNT_OF_ATTEMPTS; i > 0; i--) {
             evenGame.setNumber(ROUND_RANDOM_NUMBERS);
