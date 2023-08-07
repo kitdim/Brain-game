@@ -3,8 +3,8 @@ package hexlet.code.game;
 import java.util.Random;
 
 public final class Progression {
-    private final byte min = 5;
-    private final byte max = 10;
+    private final byte MIN = 5;
+    private final byte MAX = 10;
     private int[] progression;
     private int missNum;
 
@@ -29,7 +29,7 @@ public final class Progression {
 
     public void setProgression(byte round) {
         int number = new Random().nextInt(round) + 1;
-        progression = new int[new Random().nextInt(min, max)];
+        progression = new int[new Random().nextInt(MIN, MAX)];
         for (int i = 0; i < progression.length; i++) {
             progression[i] = number * (i + 1);
         }
