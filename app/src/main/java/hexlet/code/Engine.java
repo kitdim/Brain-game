@@ -10,13 +10,13 @@ import java.util.Scanner;
 
 public final class Engine {
     private static final Scanner scanner = new Scanner(System.in);
-    private static String userName;
-    private static String result;
-    private static String answer;
     private static final byte COUNT_OF_ATTEMPTS = 3;
     private static final byte COUNT_OPERATIONS = 3;
     private static final byte ROUND_RANDOM_NUMBERS = 100;
     private static final byte ROUND_RANDOM_NUMBERS_OF_PROGRESSION = 50;
+    private static String userName;
+    private static String result;
+    private static String answer;
     private static byte countBadAnswers = 0;
 
 
@@ -32,33 +32,33 @@ public final class Engine {
         userName = getUserName();
         System.out.println("Hello, " + userName + "!");
         switch (numberGame) {
-            case 2:
+            case 2 -> {
                 Even evenGame = new Even();
-                System.out.println(evenGame.getTitle());
+                System.out.println(Even.TITLE);
                 runEvenGame(evenGame);
-                break;
-            case 3:
+            }
+            case 3 -> {
                 Calc calcGame = new Calc();
-                System.out.println(calcGame.getTitle());
+                System.out.println(Calc.TITLE);
                 runCalcGame(calcGame);
-                break;
-            case 4:
+            }
+            case 4 -> {
                 Nod nodGame = new Nod();
-                System.out.println(nodGame.getTitle());
+                System.out.println(Nod.TITLE);
                 runNodGame(nodGame);
-                break;
-            case 5:
+            }
+            case 5 -> {
                 Progression progressionGame = new Progression();
                 System.out.println(Progression.TITLE);
                 runProgressionGame(progressionGame);
-                break;
-            case 6:
+            }
+            case 6 -> {
                 Prime primeGame = new Prime();
-                System.out.println(primeGame.getTitle());
+                System.out.println(Prime.TITLE);
                 runPrimeGame(primeGame);
-                break;
-            default:
-                break;
+            }
+            default -> {
+            }
         }
         showResultGame();
     }

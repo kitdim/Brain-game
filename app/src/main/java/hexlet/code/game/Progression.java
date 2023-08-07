@@ -4,8 +4,6 @@ import java.util.Random;
 
 public final class Progression {
     public final static String TITLE = "What number is missing in the progression?";
-    private final static byte MIN_LENGTH = 5;
-    private final static byte MAX_LENGTH = 10;
     private int[] progression;
     private int missNum;
 
@@ -26,8 +24,10 @@ public final class Progression {
     }
 
     public void setProgression(byte round) {
+        byte min = 5;
+        byte max = 10;
         int number = new Random().nextInt(round) + 1;
-        progression = new int[new Random().nextInt(MIN_LENGTH, MAX_LENGTH)];
+        progression = new int[new Random().nextInt(min, max)];
         for (int i = 0; i < progression.length; i++) {
             progression[i] = number * (i + 1);
         }
