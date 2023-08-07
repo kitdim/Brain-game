@@ -1,21 +1,34 @@
 package hexlet.code.game;
 
-import java.util.Random;
+import hexlet.code.Cli;
+import hexlet.code.Utils;
+import hexlet.code.Engine;
 
-public final class Even {
-    private int number;
-    public Even() {
+import java.util.Scanner;
+
+public class Even {
+    private static final byte COUNT_OF_ATTEMPTS = 3;
+    private static int operand;
+
+    public static void start() {
+        String userName = Cli.getUserName();
+        Cli.hello(userName);
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-    }
-    public int getNumber() {
-        return number;
+        for (int i = COUNT_OF_ATTEMPTS; i > 0; i--) {
+            operand = Utils.getRandomNumber();
+            String result = isEven() ? "yes" : "no";
+            String answer = Engine.buildGame(operand, result);
+            if (answer.equals("yes")) {
+                Engine.showAnswer();
+            } else {
+                Engine.showAnswer(result);
+                break;
+            }
+        }
+        Engine.showResult(userName);
     }
 
-    public void setNumber(byte roundRandomNumbers) {
-        number = new Random().nextInt(roundRandomNumbers) + 1;
-    }
-
-    public boolean isEven() {
-        return number % 2 == 0;
+    public static boolean isEven() {
+        return operand % 2 == 0;
     }
 }
