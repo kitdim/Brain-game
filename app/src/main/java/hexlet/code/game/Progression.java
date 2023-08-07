@@ -3,12 +3,14 @@ package hexlet.code.game;
 import java.util.Random;
 
 public final class Progression {
-    public final String title = "What number is missing in the progression?";
     private final byte MIN = 5;
     private final byte MAX = 10;
     private int[] progression;
     private int missNum;
 
+    public Progression() {
+        System.out.println("What number is missing in the progression?");
+    }
     public String getMissNum() {
         return Integer.toString(missNum);
     }

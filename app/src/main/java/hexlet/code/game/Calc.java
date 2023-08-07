@@ -3,13 +3,13 @@ package hexlet.code.game;
 import java.util.Random;
 
 public final class Calc {
-    public final String title = "What is the result of the expression?";
     private final char[] operations;
     private char operation;
     private int operand1;
     private int operand2;
 
     public Calc() {
+        System.out.println("What is the result of the expression?");
         operations = new char[]{'+', '-', '*'};
     }
 

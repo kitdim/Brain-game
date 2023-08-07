@@ -3,12 +3,12 @@ package hexlet.code.game;
 import java.util.Random;
 
 public final class Nod {
-    public final String title = "Find the greatest common divisor of given numbers.";
     private int operand1;
     private int operand2;
     private int nod;
 
     public Nod() {
+        System.out.println("Find the greatest common divisor of given numbers.");
         nod = 0;
     }
 

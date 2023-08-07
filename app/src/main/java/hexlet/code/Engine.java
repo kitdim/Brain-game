@@ -31,35 +31,30 @@ public final class Engine {
                 userName = getUserName();
                 hello(userName);
                 Even evenGame = new Even();
-                System.out.println(evenGame.title);
                 runEvenGame(evenGame);
             }
             case 3 -> {
                 userName = getUserName();
                 hello(userName);
                 Calc calcGame = new Calc();
-                System.out.println(calcGame.title);
                 runCalcGame(calcGame);
             }
             case 4 -> {
                 userName = getUserName();
                 hello(userName);
                 Nod nodGame = new Nod();
-                System.out.println(nodGame.title);
                 runNodGame(nodGame);
             }
             case 5 -> {
                 userName = getUserName();
                 hello(userName);
                 Progression progressionGame = new Progression();
-                System.out.println(progressionGame.title);
                 runProgressionGame(progressionGame);
             }
             case 6 -> {
                 userName = getUserName();
                 hello(userName);
                 Prime primeGame = new Prime();
-                System.out.println(primeGame.title);
                 runPrimeGame(primeGame);
             }
             default -> {
