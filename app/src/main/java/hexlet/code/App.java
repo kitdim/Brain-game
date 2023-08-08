@@ -1,12 +1,15 @@
 package hexlet.code;
 
 import java.util.Scanner;
+import hexlet.code.game.Prime;
+import hexlet.code.game.Progression;
+import hexlet.code.game.Calc;
+import hexlet.code.game.Nod;
+import hexlet.code.game.Even;
 
 public class App {
     public static void main(String[] args) {
         System.out.println("Welcome to the Brain Games!");
-        Scanner input = new Scanner(System.in);
-        byte numberOfGame;
         System.out.println("""
                 Please enter the game number and press Enter.
                 1 - Greet
@@ -17,8 +20,15 @@ public class App {
                 6 - Prime
                 0 - Exit""");
         System.out.print("Your change: ");
-        numberOfGame = input.nextByte();
+        Scanner input = new Scanner(System.in);
+        byte numberOfGame = input.nextByte();
         System.out.println();
-        Engine.game(numberOfGame);
+        switch (numberOfGame) {
+            case 1 -> Cli.hello(Cli.getUserName());
+            case 2 -> Even.start();
+            case 3 -> Calc.start();
+            default -> {
+            }
+        }
     }
 }
