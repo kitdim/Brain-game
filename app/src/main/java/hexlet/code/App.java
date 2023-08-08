@@ -1,5 +1,7 @@
 package hexlet.code;
+
 import java.util.Scanner;
+
 import hexlet.code.game.Prime;
 import hexlet.code.game.Progression;
 import hexlet.code.game.Calc;
