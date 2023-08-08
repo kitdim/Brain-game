@@ -1,56 +1,53 @@
 package hexlet.code.game;
 
+import hexlet.code.Cli;
+import hexlet.code.Engine;
+import hexlet.code.Utils;
+
 import java.util.Random;
 
 public final class Calc {
-    private final char[] operations;
-    private char operation;
-    private int operand1;
-    private int operand2;
+    private static final byte LENGTH_OPERATIONS = 3;
+    private static final byte COUNT_OF_ATTEMPTS = 3;
+    private static char operation;
+    private static int operand1;
+    private static int operand2;
 
-    public Calc() {
+    public static void start() {
+        String userName = Cli.getUserName();
+        Cli.hello(userName);
+        char[] operations = new char[]{'+', '-', '*'};
         System.out.println("What is the result of the expression?");
-        operations = new char[]{'+', '-', '*'};
+        for (int i = COUNT_OF_ATTEMPTS; i > 0; i--) {
+            operand1 = Utils.getRandomNumber();
+            operand2 = Utils.getRandomNumber();
+            operation = operations[Utils.getRandomNumber(LENGTH_OPERATIONS)];
+            int result = calculation();
+            String answer = Engine.buildGame(operand1, operand2, operation, result);
+            if (answer.equals("yes")) {
+                Engine.showAnswer();
+            } else {
+                Engine.showAnswer(result);
+                break;
+            }
+        }
+        Engine.showResult(userName);
     }
 
-    public int getOperand1() {
-        return operand1;
-    }
-
-    public int getOperand2() {
-        return operand2;
-    }
-
-    public char getOperation() {
-        return operation;
-    }
-
-    public void setOperand1(byte round) {
-        operand1 = new Random().nextInt(round) + 1;
-    }
-
-    public void setOperand2(byte round) {
-        operand2 = new Random().nextInt(round) + 1;
-    }
-
-    public void setOperation(byte round) {
-        operation = operations[new Random().nextInt(round)];
-    }
-
-    public String calculation() {
+    public static int calculation() {
         switch (operation) {
             case '+' -> {
-                return Integer.toString(operand1 + operand2);
+                return operand1 + operand2;
             }
             case '-' -> {
-                return Integer.toString(operand1 - operand2);
+                return operand1 - operand2;
             }
             case '*' -> {
-                return Integer.toString(operand1 * operand2);
+                return operand1 * operand2;
             }
             default -> {
             }
         }
-        return null;
+        return 0;
     }
 }
