@@ -4,8 +4,6 @@ import hexlet.code.Cli;
 import hexlet.code.Utils;
 import hexlet.code.Engine;
 
-import java.util.Scanner;
-
 public class Even {
     private static final byte COUNT_OF_ATTEMPTS = 3;
     private static int operand;
@@ -17,7 +15,7 @@ public class Even {
         for (int i = COUNT_OF_ATTEMPTS; i > 0; i--) {
             operand = Utils.getRandomNumber();
             String result = isEven() ? "yes" : "no";
-            String answer = Engine.buildGame(operand, result);
+            String answer = Engine.fbuildGame(operand, result);
             if (answer.equals("yes")) {
                 Engine.showAnswer();
             } else {
