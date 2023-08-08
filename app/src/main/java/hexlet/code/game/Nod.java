@@ -1,27 +1,34 @@
 package hexlet.code.game;
 
-import java.util.Random;
+import hexlet.code.Cli;
+import hexlet.code.Engine;
+import hexlet.code.Utils;
 
-public final class Nod {
-    private int operand1;
-    private int operand2;
-    private int nod;
 
-    public Nod() {
+public class Nod {
+    private static int operand1;
+    private static int operand2;
+    public static void start(){
+        String userName = Cli.getUserName();
+        Cli.hello(userName);
         System.out.println("Find the greatest common divisor of given numbers.");
-        nod = 0;
+        for (int i = Engine.COUNT_OF_ATTEMPTS; i > 0; i--) {
+            operand1 = Utils.getRandomNumber();
+            operand2 = Utils.getRandomNumber();
+            int result = getNod();
+            String answer = Engine.buildGame(operand1, operand2, result);
+            if (answer.equals("yes")) {
+                Engine.showAnswer();
+            } else {
+                Engine.showAnswer(result);
+                break;
+            }
+        }
+        Engine.showResult(userName);
     }
 
-    public int getOperand1() {
-        return operand1;
-    }
-
-    public int getOperand2() {
-        return operand2;
-    }
-
-    public String getNod() {
-
+    private static int getNod() {
+        int nod = 0;
         if (operand1 < operand2) {
             operand1 += operand2;
             operand2 = operand1 - operand2;
@@ -33,15 +40,7 @@ public final class Nod {
                 nod = i;
             }
         }
-
-        return Integer.toString(nod);
-    }
-
-    public void setOperand1(byte round) {
-        operand1 = new Random().nextInt(round) + 1;
-    }
-
-    public void setOperand2(byte round) {
-        operand2 = new Random().nextInt(round) + 1;
+        return nod;
     }
 }
+

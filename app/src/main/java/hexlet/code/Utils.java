@@ -12,4 +12,7 @@ public class Utils {
     public static int getRandomNumber(int length) {
         return rnb.nextInt(length);
     }
+    public static int getRandomNumber(int min, int max) {
+        return rnb.nextInt(min, max);
+    }
 }

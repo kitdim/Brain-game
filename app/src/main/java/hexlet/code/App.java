@@ -27,6 +27,9 @@ public class App {
             case 1 -> Cli.hello(Cli.getUserName());
             case 2 -> Even.start();
             case 3 -> Calc.start();
+            case 4 -> Nod.start();
+            case 5 -> Progression.start();
+            case 6 -> Prime.start();
             default -> {
             }
         }

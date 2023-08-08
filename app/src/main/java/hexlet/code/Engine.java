@@ -4,18 +4,33 @@ import java.util.Scanner;
 
 public class Engine {
     private static final Scanner SCANNER = new Scanner(System.in);
+    public static final byte COUNT_OF_ATTEMPTS = 3;
     private static int countBadAnswers = 0;
     private static String input;
 
-    public static String buildGame(int operand, String result) {
-        System.out.println("Question: " + operand);
+    public static String buildGame(int number, String result) {
+        System.out.println("Question: " + number);
         System.out.print("Your answer: ");
         input = SCANNER.next().toLowerCase();
         return isEqualAnswers(result, input) ? "yes" : "no";
     }
+    public static String buildGameProgression(int number, String progressionWithMiss) {
+        System.out.println("Question: " + progressionWithMiss);
+        System.out.print("Your answer: ");
+        int answer = SCANNER.nextInt();
+        input = String.valueOf(answer);
+        return isEqualAnswers(number, answer) ? "yes" : "no";
+    }
 
     public static String buildGame(int operand1, int operand2, char operation, int result) {
         System.out.println("Question: " + operand1 + " " + operation + " " + operand2);
+        System.out.print("Your answer: ");
+        input = SCANNER.next();
+        int convert = Integer.parseInt(input);
+        return isEqualAnswers(result, convert) ? "yes" : "no";
+    }
+    public static String buildGame(int operand1, int operand2, int result) {
+        System.out.println("Question: " + operand1 + " " + operand2);
         System.out.print("Your answer: ");
         input = SCANNER.next();
         int convert = Integer.parseInt(input);
