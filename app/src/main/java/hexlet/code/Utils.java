@@ -9,4 +9,7 @@ public class Utils {
     public static int getRandomNumber() {
         return rnb.nextInt(ROUND_RANDOM_NUMBERS);
     }
+    public static int getRandomNumber(int length) {
+        return rnb.nextInt(length);
+    }
 }
