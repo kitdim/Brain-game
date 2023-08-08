@@ -12,7 +12,7 @@ public class Engine {
         System.out.println("Question: " + number);
         System.out.print("Your answer: ");
         input = SCANNER.next().toLowerCase();
-        return isEqualAnswers(result, input) ? "yes" : "no";
+        return isEqualAnswers(result) ? "yes" : "no";
     }
     public static String buildGameProgression(int number, String progressionWithMiss) {
         System.out.println("Question: " + progressionWithMiss);
@@ -37,7 +37,7 @@ public class Engine {
         return isEqualAnswers(result, convert) ? "yes" : "no";
     }
 
-    private static boolean isEqualAnswers(String result, String input) {
+    private static boolean isEqualAnswers(String result) {
         return result.equals(input);
     }
 

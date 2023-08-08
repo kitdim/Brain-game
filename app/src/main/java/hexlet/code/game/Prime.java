@@ -4,10 +4,9 @@ import hexlet.code.Cli;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-import java.util.Random;
-
 public final class Prime {
     private static int number;
+
     public static void start() {
         String userName = Cli.getUserName();
         Cli.hello(userName);

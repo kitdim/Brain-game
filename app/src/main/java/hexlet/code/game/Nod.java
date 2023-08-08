@@ -8,7 +8,8 @@ import hexlet.code.Utils;
 public class Nod {
     private static int operand1;
     private static int operand2;
-    public static void start(){
+
+    public static void start() {
         String userName = Cli.getUserName();
         Cli.hello(userName);
         System.out.println("Find the greatest common divisor of given numbers.");

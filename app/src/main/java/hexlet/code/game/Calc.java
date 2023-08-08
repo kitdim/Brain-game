@@ -4,8 +4,6 @@ import hexlet.code.Cli;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-import java.util.Random;
-
 public final class Calc {
     private static final byte LENGTH_OPERATIONS = 3;
     private static char operation;

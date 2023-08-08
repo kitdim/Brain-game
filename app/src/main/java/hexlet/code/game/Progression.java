@@ -41,7 +41,7 @@ public final class Progression {
         return progressionWithMiss.toString();
     }
 
-    public static int[] getProgression(){
+    public static int[] getProgression() {
         int number = Utils.getRandomNumber();
         int[] tempProgression = new int[Utils.getRandomNumber(MIN, MAX)];
         for (int i = 0; i < tempProgression.length; i++) {
