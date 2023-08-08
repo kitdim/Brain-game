@@ -1,13 +1,12 @@
 package hexlet.code;
 
-
-import java.util.Scanner;
-
 import hexlet.code.game.Prime;
 import hexlet.code.game.Progression;
 import hexlet.code.game.Calc;
 import hexlet.code.game.Nod;
 import hexlet.code.game.Even;
+
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
