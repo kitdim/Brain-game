@@ -15,7 +15,7 @@ public class Even {
         for (int i = COUNT_OF_ATTEMPTS; i > 0; i--) {
             operand = Utils.getRandomNumber();
             String result = isEven() ? "yes" : "no";
-            String answer = Engine.fbuildGame(operand, result);
+            String answer = Engine.buildGame(operand, result);
             if (answer.equals("yes")) {
                 Engine.showAnswer();
             } else {
