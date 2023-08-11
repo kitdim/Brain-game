@@ -7,29 +7,29 @@ import hexlet.code.Utils;
 public final class Progression {
     private static final byte MIN = 5;
     private static final byte MAX = 10;
-    private static int[] progression;
-    private static int missNum;
 
     public static void start() {
         String userName = Cli.getUserName();
         Cli.hello(userName);
         System.out.println("What number is missing in the progression?");
         for (int i = Engine.COUNT_OF_ATTEMPTS; i > 0; i--) {
-            progression = getProgression();
-            missNum = progression[Utils.getRandomNumber(progression.length)];
-            String progressionWithMiss = getProgressionWithMiss();
-            String answer = Engine.buildGameProgression(missNum, progressionWithMiss);
-            if (answer.equals("yes")) {
+            int[] progression = getProgression();
+            int missNum = progression[Utils.getRandomNumber(progression.length)];
+            String result = Integer.toString(missNum);
+            String question = getProgressionWithMiss(progression, missNum);
+            Engine.setQuestion(question);
+            System.out.println(Engine.getQuestion());
+            if (Engine.checkAnswer(result)) {
                 Engine.showAnswer();
             } else {
-                Engine.showAnswer(missNum);
+                Engine.showAnswer(result);
                 break;
             }
         }
         Engine.showResult(userName);
     }
 
-    public static String getProgressionWithMiss() {
+    public static String getProgressionWithMiss(int[] progression, int missNum) {
         StringBuilder progressionWithMiss = new StringBuilder();
         for (var item : progression) {
             if (item == missNum) {
