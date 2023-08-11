@@ -6,53 +6,29 @@ public class Engine {
     private static final Scanner SCANNER = new Scanner(System.in);
     public static final byte COUNT_OF_ATTEMPTS = 3;
     private static int countBadAnswers = 0;
-    private static String input;
+    private static String answer;
+    private static String question;
 
-    public static String buildGame(int number, String result) {
-        System.out.println("Question: " + number);
-        System.out.print("Your answer: ");
-        input = SCANNER.next().toLowerCase();
-        return isEqualAnswers(result) ? "yes" : "no";
-    }
-    public static String buildGameProgression(int number, String progressionWithMiss) {
-        System.out.println("Question: " + progressionWithMiss);
-        System.out.print("Your answer: ");
-        int answer = SCANNER.nextInt();
-        input = String.valueOf(answer);
-        return isEqualAnswers(number, answer) ? "yes" : "no";
+    public static void setQuestion(String str) {
+        question = str;
     }
 
-    public static String buildGame(int operand1, int operand2, char operation, int result) {
-        System.out.println("Question: " + operand1 + " " + operation + " " + operand2);
-        System.out.print("Your answer: ");
-        input = SCANNER.next();
-        int convert = Integer.parseInt(input);
-        return isEqualAnswers(result, convert) ? "yes" : "no";
-    }
-    public static String buildGame(int operand1, int operand2, int result) {
-        System.out.println("Question: " + operand1 + " " + operand2);
-        System.out.print("Your answer: ");
-        input = SCANNER.next();
-        int convert = Integer.parseInt(input);
-        return isEqualAnswers(result, convert) ? "yes" : "no";
+    public static String getQuestion() {
+        return "Question: " + question;
     }
 
-    private static boolean isEqualAnswers(String result) {
-        return result.equals(input);
+    public static boolean checkAnswer(String result) {
+        System.out.print("Your answer: ");
+        answer = SCANNER.next().toLowerCase();
+        return isEqual(result);
     }
 
-    private static boolean isEqualAnswers(int result, int convert) {
-        return result == convert;
+    private static boolean isEqual(String result) {
+        return result.equals(answer);
     }
 
     public static void showAnswer(String result) {
-        System.out.println("'" + input + "'" + " is wrong answer ;(. "
-                + "Correct answer is " + "'" + result + "'");
-        countBadAnswers++;
-    }
-
-    public static void showAnswer(int result) {
-        System.out.println("'" + input + "'" + " is wrong answer ;(. "
+        System.out.println("'" + answer + "'" + " is wrong answer ;(. "
                 + "Correct answer is " + "'" + result + "'");
         countBadAnswers++;
     }
@@ -69,4 +45,3 @@ public class Engine {
         }
     }
 }
-
