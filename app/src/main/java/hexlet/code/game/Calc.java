@@ -11,7 +11,6 @@ public final class Calc {
         String userName = Cli.getUserName();
         Cli.hello(userName);
         char[] operations = new char[]{'+', '-', '*'};
-        boolean isGoodResult;
         System.out.println("What is the result of the expression?");
         for (int i = Engine.COUNT_OF_ATTEMPTS; i > 0; i--) {
             int operand1 = Utils.getRandomNumber();
@@ -21,8 +20,7 @@ public final class Calc {
             String question = operand1 + " " + operation + " " + operand2;
             Engine.setQuestion(question);
             System.out.println(Engine.getQuestion());
-            isGoodResult = Engine.checkAnswer(result);
-            if (isGoodResult) {
+            if (Engine.checkAnswer(result)) {
                 Engine.showAnswer();
             } else {
                 Engine.showAnswer(result);
