@@ -6,9 +6,8 @@
 ### Task 3
 [![asciicast](https://asciinema.org/a/v8qEk0qjz39yAdLNE6lyOCcTW.svg)](https://asciinema.org/a/v8qEk0qjz39yAdLNE6lyOCcTW)
 ### Task 4
-[Complite](https://asciinema.org/a/bW4PHVwMSaxUw43tXOR7oKx8r)
+[![asciicast](https://asciinema.org/a/bW4PHVwMSaxUw43tXOR7oKx8r.svg)](https://asciinema.org/a/bW4PHVwMSaxUw43tXOR7oKx8r)
 ### Task 5
-[Complite](https://asciinema.org/a/63rKEjFXNUba6kfJWN8MCzT0y)
+[![asciicast](https://asciinema.org/a/63rKEjFXNUba6kfJWN8MCzT0y.svg)](https://asciinema.org/a/63rKEjFXNUba6kfJWN8MCzT0y)
 ### Task 6
-[Complite](https://asciinema.org/a/KZAGpxL3VkA1ZqaKmKBR6g9uF)
-
+[![asciicast](https://asciinema.org/a/KZAGpxL3VkA1ZqaKmKBR6g9uF.svg)](https://asciinema.org/a/KZAGpxL3VkA1ZqaKmKBR6g9uF)
