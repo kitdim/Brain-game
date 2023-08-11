@@ -11,4 +11,3 @@
 [![asciicast](https://asciinema.org/a/63rKEjFXNUba6kfJWN8MCzT0y.svg)](https://asciinema.org/a/63rKEjFXNUba6kfJWN8MCzT0y)
 ### Task 6
 [![asciicast](https://asciinema.org/a/KZAGpxL3VkA1ZqaKmKBR6g9uF.svg)](https://asciinema.org/a/KZAGpxL3VkA1ZqaKmKBR6g9uF)
-[![asciicast](https://asciinema.org/a/584828.svg)](https://asciinema.org/a/584828)
