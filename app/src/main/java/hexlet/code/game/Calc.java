@@ -6,22 +6,23 @@ import hexlet.code.Utils;
 
 public final class Calc {
     private static final byte LENGTH_OPERATIONS = 3;
-    private static char operation;
-    private static int operand1;
-    private static int operand2;
 
     public static void start() {
         String userName = Cli.getUserName();
         Cli.hello(userName);
         char[] operations = new char[]{'+', '-', '*'};
+        boolean isGoodResult;
         System.out.println("What is the result of the expression?");
         for (int i = Engine.COUNT_OF_ATTEMPTS; i > 0; i--) {
-            operand1 = Utils.getRandomNumber();
-            operand2 = Utils.getRandomNumber();
-            operation = operations[Utils.getRandomNumber(LENGTH_OPERATIONS)];
-            int result = calculation();
-            String answer = Engine.buildGame(operand1, operand2, operation, result);
-            if (answer.equals("yes")) {
+            int operand1 = Utils.getRandomNumber();
+            int operand2 = Utils.getRandomNumber();
+            char operation = operations[Utils.getRandomNumber(LENGTH_OPERATIONS)];
+            String result = calculation(operation, operand1, operand2);
+            String question = operand1 + " " + operation + " " + operand2;
+            Engine.setQuestion(question);
+            System.out.println(Engine.getQuestion());
+            isGoodResult = Engine.checkAnswer(result);
+            if (isGoodResult) {
                 Engine.showAnswer();
             } else {
                 Engine.showAnswer(result);
@@ -31,20 +32,12 @@ public final class Calc {
         Engine.showResult(userName);
     }
 
-    public static int calculation() {
-        switch (operation) {
-            case '+' -> {
-                return operand1 + operand2;
-            }
-            case '-' -> {
-                return operand1 - operand2;
-            }
-            case '*' -> {
-                return operand1 * operand2;
-            }
-            default -> {
-            }
-        }
-        return 0;
+    public static String calculation(char operation, int operand1, int operand2) {
+        return switch (operation) {
+            case '-' -> Integer.toString(operand1 - operand2);
+            case '+' -> Integer.toString(operand1 + operand2);
+            case '*' -> Integer.toString(operand1 * operand2);
+            default -> null;
+        };
     }
 }
