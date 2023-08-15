@@ -13,10 +13,9 @@ public final class Progression {
         for (int i = Engine.COUNT_OF_ATTEMPTS; i > 0; i--) {
             int length = Utils.getRandomNumber(5, 10);
             int startItem = Utils.getRandomNumber(1, 20);
-            int[] progression = getProgression(length, startItem);
-            int missNum = progression[Utils.getRandomNumber(progression.length)];
-            String result = Integer.toString(missNum);
-            String question = getProgressionWithMiss(progression, missNum);
+            String[] progression = getProgression(length, startItem);
+            String result = progression[Utils.getRandomNumber(0, progression.length)];
+            String question = getProgressionWithMiss(progression, result);
             Engine.setQuestion(question);
             System.out.println(Engine.getQuestion());
             if (Engine.checkAnswer(result)) {
@@ -29,22 +28,19 @@ public final class Progression {
         Engine.showResult(userName);
     }
 
-    public static String getProgressionWithMiss(int[] progression, int missNum) {
-        StringBuilder progressionWithMiss = new StringBuilder();
-        for (var item : progression) {
-            if (item == missNum) {
-                progressionWithMiss.append(".. ");
-            } else {
-                progressionWithMiss.append(item).append(" ");
+    public static String getProgressionWithMiss(String[] progression, String missNum) {
+        for (var i = 0; i < progression.length; i++) {
+            if (progression[i].equals(missNum)) {
+                progression[i] = "..";
             }
         }
-        return progressionWithMiss.toString();
+        return String.join(" ", progression);
     }
 
-    public static int[] getProgression(int length, int startItem) {
-        int[] tempProgression = new int[length];
-        for (int i = startItem; i < tempProgression.length; i++) {
-            tempProgression[i] = startItem * (i + 1);
+    public static String[] getProgression(int length, int startItem) {
+        String[] tempProgression = new String[length];
+        for (int i = 0; i < tempProgression.length; i++) {
+            tempProgression[i] = Integer.toString(startItem * (i + 1));
         }
         return tempProgression;
     }
