@@ -3,7 +3,6 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    private static final Scanner SCANNER = new Scanner(System.in);
     public static final byte COUNT_OF_ATTEMPTS = 3;
     private static int countBadAnswers = 0;
     private static String answer;
@@ -18,8 +17,9 @@ public class Engine {
     }
 
     public static boolean checkAnswer(String result) {
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Your answer: ");
-        answer = SCANNER.next().toLowerCase();
+        answer = scanner.next().toLowerCase();
         return isEqual(result);
     }
 
