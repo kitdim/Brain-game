@@ -5,15 +5,15 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public final class Progression {
-    private static final byte MIN = 5;
-    private static final byte MAX = 10;
 
     public static void start() {
         String userName = Cli.getUserName();
         Cli.hello(userName);
         System.out.println("What number is missing in the progression?");
         for (int i = Engine.COUNT_OF_ATTEMPTS; i > 0; i--) {
-            int[] progression = getProgression();
+            int length = Utils.getRandomNumber(5, 10);
+            int startItem = Utils.getRandomNumber(1, 20);
+            int[] progression = getProgression(length, startItem);
             int missNum = progression[Utils.getRandomNumber(progression.length)];
             String result = Integer.toString(missNum);
             String question = getProgressionWithMiss(progression, missNum);
@@ -41,11 +41,10 @@ public final class Progression {
         return progressionWithMiss.toString();
     }
 
-    public static int[] getProgression() {
-        int number = Utils.getRandomNumber();
-        int[] tempProgression = new int[Utils.getRandomNumber(MIN, MAX)];
-        for (int i = 0; i < tempProgression.length; i++) {
-            tempProgression[i] = number * (i + 1);
+    public static int[] getProgression(int length, int startItem) {
+        int[] tempProgression = new int[length];
+        for (int i = startItem; i < tempProgression.length; i++) {
+            tempProgression[i] = startItem * (i + 1);
         }
         return tempProgression;
     }
