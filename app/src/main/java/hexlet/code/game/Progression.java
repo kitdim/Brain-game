@@ -14,8 +14,9 @@ public final class Progression {
             int length = Utils.getRandomNumber(5, 10);
             int startItem = Utils.getRandomNumber(1, 20);
             String[] progression = getProgression(length, startItem);
-            String result = progression[Utils.getRandomNumber(0, progression.length)];
-            String question = getProgressionWithMiss(progression, result);
+            int randIndex = Utils.getRandomNumber(0, progression.length);
+            String result = progression[randIndex];
+            String question = getProgressionWithMiss(progression, randIndex);
             Engine.setQuestion(question);
             System.out.println(Engine.getQuestion());
             if (Engine.checkAnswer(result)) {
@@ -28,12 +29,8 @@ public final class Progression {
         Engine.showResult(userName);
     }
 
-    public static String getProgressionWithMiss(String[] progression, String missNum) {
-        for (var i = 0; i < progression.length; i++) {
-            if (progression[i].equals(missNum)) {
-                progression[i] = "..";
-            }
-        }
+    public static String getProgressionWithMiss(String[] progression, int randIndex) {
+        progression[randIndex] = "..";
         return String.join(" ", progression);
     }
 
