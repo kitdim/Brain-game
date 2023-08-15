@@ -13,9 +13,9 @@ public final class Calc {
         char[] operations = new char[]{'+', '-', '*'};
         System.out.println("What is the result of the expression?");
         for (int i = Engine.COUNT_OF_ATTEMPTS; i > 0; i--) {
-            int operand1 = Utils.getRandomNumber();
-            int operand2 = Utils.getRandomNumber();
-            char operation = operations[Utils.getRandomNumber(LENGTH_OPERATIONS)];
+            int operand1 = Utils.getRandomNumber(0, 50);
+            int operand2 = Utils.getRandomNumber(0, 50);
+            char operation = operations[Utils.getRandomNumber(0, LENGTH_OPERATIONS)];
             String result = calculation(operation, operand1, operand2);
             String question = operand1 + " " + operation + " " + operand2;
             Engine.setQuestion(question);

@@ -11,7 +11,7 @@ public final class Prime {
         Cli.hello(userName);
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         for (int i = Engine.COUNT_OF_ATTEMPTS; i > 0; i--) {
-            int number = Utils.getRandomNumber();
+            int number = Utils.getRandomNumber(0, 50);
             String question = Integer.toString(number);
             String result = isPrime(number) ? "yes" : "no";
             Engine.setQuestion(question);

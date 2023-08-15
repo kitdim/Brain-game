@@ -10,8 +10,8 @@ public class Nod {
         Cli.hello(userName);
         System.out.println("Find the greatest common divisor of given numbers.");
         for (int i = Engine.COUNT_OF_ATTEMPTS; i > 0; i--) {
-            int operand1 = Utils.getRandomNumber();
-            int operand2 = Utils.getRandomNumber();
+            int operand1 = Utils.getRandomNumber(0, 50);
+            int operand2 = Utils.getRandomNumber(0, 50);
             String result = Integer.toString(getNod(operand1, operand2));
             String question = "Question: " + operand1 + " " + operand2;
             Engine.setQuestion(question);
