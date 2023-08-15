@@ -4,7 +4,7 @@ import hexlet.code.Cli;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-public final class Prime {
+public class Prime {
 
     public static void start() {
         String userName = Cli.getUserName();

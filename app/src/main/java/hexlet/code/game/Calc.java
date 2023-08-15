@@ -4,7 +4,7 @@ import hexlet.code.Cli;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-public final class Calc {
+public class Calc {
     private static final byte LENGTH_OPERATIONS = 3;
 
     public static void start() {
