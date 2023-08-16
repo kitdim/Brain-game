@@ -5,16 +5,20 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Progression {
+    private static final int MIN_LENGTH = 5;
+    private static final int MAX_LENGTH = 10;
+    private static final int MIN = 0;
+    private static final int MAX = 20;
 
     public static void start() {
         String userName = Cli.getUserName();
         Cli.hello(userName);
         System.out.println("What number is missing in the progression?");
         for (int i = Engine.COUNT_OF_ATTEMPTS; i > 0; i--) {
-            int length = Utils.getRandomNumber(5, 10);
-            int startItem = Utils.getRandomNumber(1, 20);
+            int length = Utils.getRandomNumber(MIN_LENGTH, MAX_LENGTH);
+            int startItem = Utils.getRandomNumber(MIN, MAX);
             String[] progression = getProgression(length, startItem);
-            int randIndex = Utils.getRandomNumber(0, progression.length);
+            int randIndex = Utils.getRandomNumber(MIN, progression.length);
             String result = progression[randIndex];
             String question = getProgressionWithMiss(progression, randIndex);
             Engine.setQuestion(question);

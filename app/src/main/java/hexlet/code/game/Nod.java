@@ -5,13 +5,16 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Nod {
+    private static final int MIN = 0;
+    private static final int MAX = 50;
+
     public static void start() {
         String userName = Cli.getUserName();
         Cli.hello(userName);
         System.out.println("Find the greatest common divisor of given numbers.");
         for (int i = Engine.COUNT_OF_ATTEMPTS; i > 0; i--) {
-            int operand1 = Utils.getRandomNumber(0, 50);
-            int operand2 = Utils.getRandomNumber(0, 50);
+            int operand1 = Utils.getRandomNumber(MIN, MAX);
+            int operand2 = Utils.getRandomNumber(MIN, MAX);
             String result = Integer.toString(getNod(operand1, operand2));
             String question = "Question: " + operand1 + " " + operand2;
             Engine.setQuestion(question);
