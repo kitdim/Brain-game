@@ -1,6 +1,5 @@
 package hexlet.code.game;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
@@ -9,24 +8,9 @@ public class Nod {
     private static final int MAX = 50;
 
     public static void start() {
-        String userName = Cli.getUserName();
-        Cli.hello(userName);
-        System.out.println("Find the greatest common divisor of given numbers.");
-        for (int i = Engine.COUNT_OF_ATTEMPTS; i > 0; i--) {
-            int operand1 = Utils.getRandomNumber(MIN, MAX);
-            int operand2 = Utils.getRandomNumber(MIN, MAX);
-            String result = Integer.toString(getNod(operand1, operand2));
-            String question = "Question: " + operand1 + " " + operand2;
-            Engine.setQuestion(question);
-            System.out.println(Engine.getQuestion());
-            if (Engine.checkAnswer(result)) {
-                Engine.showAnswer();
-            } else {
-                Engine.showAnswer(result);
-                break;
-            }
-        }
-        Engine.showResult(userName);
+        String[][] fullText = make();
+        String rule = "Find the greatest common divisor of given numbers.";
+        Engine.review(fullText, rule);
     }
 
     private static int getNod(int operand1, int operand2) {
@@ -51,5 +35,18 @@ public class Nod {
             }
         }
         return nod;
+    }
+
+    public static String[][] make() {
+        String[][] fullText = new String[Engine.COUNT_OF_ATTEMPTS][Engine.COUNT_OF_QUESTIONS];
+        for (int i = 0; i < fullText.length; i++) {
+            for (int j = 0; j < fullText[i].length; j++) {
+                int operand1 = Utils.getRandomNumber(MIN, MAX);
+                int operand2 = Utils.getRandomNumber(MIN, MAX);
+                String result = Integer.toString(getNod(operand1, operand2));
+                fullText[i][j] = operand1 + " " + operand2 + ":" + result;
+            }
+        }
+        return fullText;
     }
 }

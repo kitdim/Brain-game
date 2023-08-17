@@ -1,6 +1,5 @@
 package hexlet.code.game;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
@@ -11,26 +10,9 @@ public class Progression {
     private static final int MAX = 20;
 
     public static void start() {
-        String userName = Cli.getUserName();
-        Cli.hello(userName);
-        System.out.println("What number is missing in the progression?");
-        for (int i = Engine.COUNT_OF_ATTEMPTS; i > 0; i--) {
-            int length = Utils.getRandomNumber(MIN_LENGTH, MAX_LENGTH);
-            int startItem = Utils.getRandomNumber(MIN, MAX);
-            String[] progression = getProgression(length, startItem);
-            int randIndex = Utils.getRandomNumber(MIN, progression.length);
-            String result = progression[randIndex];
-            String question = getProgressionWithMiss(progression, randIndex);
-            Engine.setQuestion(question);
-            System.out.println(Engine.getQuestion());
-            if (Engine.checkAnswer(result)) {
-                Engine.showAnswer();
-            } else {
-                Engine.showAnswer(result);
-                break;
-            }
-        }
-        Engine.showResult(userName);
+        String[][] fullText = make();
+        String rule = "What number is missing in the progression?";
+        Engine.review(fullText, rule);
     }
 
     public static String getProgressionWithMiss(String[] progression, int randIndex) {
@@ -46,4 +28,19 @@ public class Progression {
         return tempProgression;
     }
 
+    private static String[][] make() {
+        String[][] fullText = new String[Engine.COUNT_OF_ATTEMPTS][Engine.COUNT_OF_QUESTIONS];
+        for (int i = 0; i < fullText.length; i++) {
+            for (int j = 0; j < fullText[i].length; j++) {
+                int length = Utils.getRandomNumber(MIN_LENGTH, MAX_LENGTH);
+                int startItem = Utils.getRandomNumber(MIN, MAX);
+                String[] progression = getProgression(length, startItem);
+                int randIndex = Utils.getRandomNumber(MIN, progression.length);
+                String result = progression[randIndex];
+                String question = getProgressionWithMiss(progression, randIndex);
+                fullText[i][j] = question + ":" + result;
+            }
+        }
+        return fullText;
+    }
 }
