@@ -9,6 +9,13 @@ import hexlet.code.game.Even;
 import java.util.Scanner;
 
 public class App {
+    public static final Integer GREET = 1;
+    public static final Integer EVEN = 2;
+    public static final Integer CALC = 3;
+    public static final Integer NOD = 4;
+    public static final Integer PROGRESSION = 5;
+    public static final Integer PRIME = 6;
+
     public static void main(String[] args) {
         System.out.println("Welcome to the Brain Games!");
         System.out.println("""
@@ -22,17 +29,20 @@ public class App {
                 0 - Exit""");
         System.out.print("Your change: ");
         Scanner input = new Scanner(System.in);
-        String numberGame = input.next();
+        int numberGame = Integer.parseInt(input.next());
         System.out.println();
-        switch (numberGame) {
-            case "1" -> Cli.hello(Cli.getUserName());
-            case "2" -> Even.start();
-            case "3" -> Calc.start();
-            case "4" -> Nod.start();
-            case "5" -> Progression.start();
-            case "6" -> Prime.start();
-            default -> {
-            }
+        if (numberGame == GREET) {
+            Cli.hello(Cli.getUserName());
+        } else if (numberGame == EVEN) {
+            Even.start();
+        } else if (numberGame == CALC) {
+            Calc.start();
+        } else if (numberGame == NOD) {
+            Nod.start();
+        } else if (numberGame == PROGRESSION) {
+            Progression.start();
+        } else if (numberGame == PRIME) {
+            Prime.start();
         }
     }
 }
