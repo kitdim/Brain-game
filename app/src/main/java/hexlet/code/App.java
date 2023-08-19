@@ -32,7 +32,7 @@ public class App {
         int numberGame = Integer.parseInt(input.next());
         System.out.println();
         if (numberGame == GREET) {
-            Cli.hello(Cli.getUserName());
+            Cli.greet();
         } else if (numberGame == EVEN) {
             Even.start();
         } else if (numberGame == CALC) {
