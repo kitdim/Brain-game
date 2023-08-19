@@ -7,11 +7,12 @@ public class Engine {
     public static final byte COUNT_OF_QUESTIONS = 1;
 
     public static void review(String[][] fullText, String rule) {
-        String userName = Cli.getUserName();
-        Cli.hello(userName);
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("May I have your name? ");
+        String userName = scanner.next();
+        System.out.println("Hello, " + userName + "!");
         System.out.println(rule);
         int countBadAnswers = 0;
-        Scanner scanner = new Scanner(System.in);
         for (String[] strings : fullText) {
             if (countBadAnswers > 0) {
                 break;
