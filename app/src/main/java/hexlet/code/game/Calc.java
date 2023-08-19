@@ -9,18 +9,18 @@ public class Calc {
     private static final char[] OPERATIONS = new char[]{'+', '-', '*'};
 
     public static void start() {
-        String[][] fullText = new String[Engine.COUNT_OF_ATTEMPTS][Engine.COUNT_OF_QUESTIONS];
-        for (int i = 0; i < fullText.length; i++) {
-            for (int j = 0; j < fullText[i].length; j++) {
+        String[][] data = new String[Engine.COUNT_OF_ATTEMPTS][Engine.COUNT_OF_QUESTIONS];
+        for (int i = 0; i < data.length; i++) {
+            for (int j = 0; j < data[i].length; j++) {
                 int operand1 = Utils.getRandomNumber(MIN, MAX);
                 int operand2 = Utils.getRandomNumber(MIN, MAX);
                 char operation = OPERATIONS[Utils.getRandomNumber(0, OPERATIONS.length)];
                 String result = getCalculationResult(operation, operand1, operand2);
-                fullText[i][j] = operand1 + " " + operation + " " + operand2 + ":" + result;
+                data[i][j] = operand1 + " " + operation + " " + operand2 + ":" + result;
             }
         }
         String rule = "What is the result of the expression?";
-        Engine.review(fullText, rule);
+        Engine.review(data, rule);
     }
 
     private static String getCalculationResult(char operation, int operand1, int operand2) {
