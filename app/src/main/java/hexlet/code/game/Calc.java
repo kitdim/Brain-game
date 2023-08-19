@@ -15,7 +15,7 @@ public class Calc {
                 int operand1 = Utils.getRandomNumber(MIN, MAX);
                 int operand2 = Utils.getRandomNumber(MIN, MAX);
                 char operation = OPERATIONS[Utils.getRandomNumber(0, OPERATIONS.length)];
-                String result = calculation(operation, operand1, operand2);
+                String result = getCalculationResult(operation, operand1, operand2);
                 fullText[i][j] = operand1 + " " + operation + " " + operand2 + ":" + result;
             }
         }
@@ -23,7 +23,7 @@ public class Calc {
         Engine.review(fullText, rule);
     }
 
-    private static String calculation(char operation, int operand1, int operand2) {
+    private static String getCalculationResult(char operation, int operand1, int operand2) {
         return switch (operation) {
             case '-' -> Integer.toString(operand1 - operand2);
             case '+' -> Integer.toString(operand1 + operand2);
