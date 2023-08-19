@@ -22,9 +22,9 @@ public class App {
                 0 - Exit""");
         System.out.print("Your change: ");
         Scanner input = new Scanner(System.in);
-        String numberOfGame = input.next();
+        String numberGame = input.next();
         System.out.println();
-        switch (numberOfGame) {
+        switch (numberGame) {
             case "1" -> Cli.hello(Cli.getUserName());
             case "2" -> Even.start();
             case "3" -> Calc.start();
