@@ -9,7 +9,16 @@ public class Calc {
     private static final char[] OPERATIONS = new char[]{'+', '-', '*'};
 
     public static void start() {
-        String[][] fullText = make();
+        String[][] fullText = new String[Engine.COUNT_OF_ATTEMPTS][Engine.COUNT_OF_QUESTIONS];
+        for (int i = 0; i < fullText.length; i++) {
+            for (int j = 0; j < fullText[i].length; j++) {
+                int operand1 = Utils.getRandomNumber(MIN, MAX);
+                int operand2 = Utils.getRandomNumber(MIN, MAX);
+                char operation = OPERATIONS[Utils.getRandomNumber(0, OPERATIONS.length)];
+                String result = calculation(operation, operand1, operand2);
+                fullText[i][j] = operand1 + " " + operation + " " + operand2 + ":" + result;
+            }
+        }
         String rule = "What is the result of the expression?";
         Engine.review(fullText, rule);
     }
@@ -21,20 +30,5 @@ public class Calc {
             case '*' -> Integer.toString(operand1 * operand2);
             default -> null;
         };
-    }
-
-    private static String[][] make() {
-        
-        String[][] fullText = new String[Engine.COUNT_OF_ATTEMPTS][Engine.COUNT_OF_QUESTIONS];
-        for (int i = 0; i < fullText.length; i++) {
-            for (int j = 0; j < fullText[i].length; j++) {
-                int operand1 = Utils.getRandomNumber(MIN, MAX);
-                int operand2 = Utils.getRandomNumber(MIN, MAX);
-                char operation = OPERATIONS[Utils.getRandomNumber(0, OPERATIONS.length)];
-                String result = calculation(operation, operand1, operand2);
-                fullText[i][j] = operand1 + " " + operation + " " + operand2 + ":" + result;
-            }
-        }
-        return fullText;
     }
 }
