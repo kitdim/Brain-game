@@ -7,6 +7,7 @@ public class Calc {
     private static final byte LENGTH_OPERATIONS = 3;
     private static final int MIN = 0;
     private static final int MAX = 50;
+    private static final char[] OPERATIONS = new char[]{'+', '-', '*'};
 
     public static void start() {
         String[][] fullText = make();
@@ -24,13 +25,13 @@ public class Calc {
     }
 
     private static String[][] make() {
-        char[] operations = new char[]{'+', '-', '*'};
+
         String[][] fullText = new String[Engine.COUNT_OF_ATTEMPTS][Engine.COUNT_OF_QUESTIONS];
         for (int i = 0; i < fullText.length; i++) {
             for (int j = 0; j < fullText[i].length; j++) {
                 int operand1 = Utils.getRandomNumber(MIN, MAX);
                 int operand2 = Utils.getRandomNumber(MIN, MAX);
-                char operation = operations[Utils.getRandomNumber(0, LENGTH_OPERATIONS)];
+                char operation = OPERATIONS[Utils.getRandomNumber(0, LENGTH_OPERATIONS)];
                 String result = calculation(operation, operand1, operand2);
                 fullText[i][j] = operand1 + " " + operation + " " + operand2 + ":" + result;
             }
