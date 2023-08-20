@@ -10,37 +10,21 @@ public class Progression {
     private static final int MAX = 20;
 
     public static void start() {
-        String[][] fullText = make();
-        String rule = "What number is missing in the progression?";
-        Engine.review(fullText, rule);
-    }
-
-    public static String getProgressionWithMiss(String[] progression, int randIndex) {
-        progression[randIndex] = "..";
-        return String.join(" ", progression);
-    }
-
-    public static String[] getProgression(int length, int startItem) {
-        String[] tempProgression = new String[length];
-        for (int i = 0; i < tempProgression.length; i++) {
-            tempProgression[i] = Integer.toString(startItem * (i + 1));
-        }
-        return tempProgression;
-    }
-
-    private static String[][] make() {
-        String[][] fullText = new String[Engine.COUNT_OF_ATTEMPTS][Engine.COUNT_OF_QUESTIONS];
-        for (int i = 0; i < fullText.length; i++) {
-            for (int j = 0; j < fullText[i].length; j++) {
-                int length = Utils.getRandomNumber(MIN_LENGTH, MAX_LENGTH);
-                int startItem = Utils.getRandomNumber(MIN, MAX);
-                String[] progression = getProgression(length, startItem);
-                int randIndex = Utils.getRandomNumber(MIN, progression.length);
-                String result = progression[randIndex];
-                String question = getProgressionWithMiss(progression, randIndex);
-                fullText[i][j] = question + ":" + result;
+        String[][] data = new String[Engine.COUNT_OF_ATTEMPTS][Engine.COUNT_OF_DATA];
+        for (int i = 0; i < data.length; i++) {
+            int length = Utils.getRandomNumber(MIN_LENGTH, MAX_LENGTH);
+            int startItem = Utils.getRandomNumber(MIN, MAX);
+            String[] progression = new String[length];
+            int randIndex = Utils.getRandomNumber(MIN, progression.length);
+            for (int j = 0; j < length; j++) {
+                progression[j] = Integer.toString(startItem * (j + 1));
             }
+            String result = progression[randIndex];
+            progression[randIndex] = "..";
+            data[i][0] = String.join(" ", progression);
+            data[i][1] = result;
         }
-        return fullText;
+        String rule = "What number is missing in the progression?";
+        Engine.review(data, rule);
     }
 }
