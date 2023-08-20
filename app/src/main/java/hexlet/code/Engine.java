@@ -12,28 +12,23 @@ public class Engine {
         String userName = scanner.next();
         System.out.println("Hello, " + userName + "!");
         System.out.println(rule);
-        int countBadAnswers = 0;
-        for (String[] strings : data) {
-            if (countBadAnswers > 0) {
+        boolean correct = true;
+        for (String[] round : data) {
+            String question = round[0];
+            String result = round[1];
+            System.out.println("Question: " + question);
+            System.out.print("Your answer: ");
+            String answer = scanner.next().toLowerCase();
+            if (result.equals(answer)) {
+                System.out.println("Correct!");
+            } else {
+                System.out.println("'" + answer + "'" + " is wrong answer ;(. "
+                        + "Correct answer is " + "'" + result + "'");
+                correct = false;
                 break;
             }
-            for (String string : strings) {
-                String question = string.split(":")[0];
-                String result = string.split(":")[1];
-                System.out.println("Question: " + question);
-                System.out.print("Your answer: ");
-                String answer = scanner.next().toLowerCase();
-                if (result.equals(answer)) {
-                    System.out.println("Correct!");
-                } else {
-                    System.out.println("'" + answer + "'" + " is wrong answer ;(. "
-                            + "Correct answer is " + "'" + result + "'");
-                    countBadAnswers++;
-                    break;
-                }
-            }
         }
-        if (countBadAnswers == 0) {
+        if (correct) {
             System.out.println("Congratulations, " + userName + "!");
         } else {
             System.out.println("Let's try again, " + userName + "!");
