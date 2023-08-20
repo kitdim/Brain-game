@@ -8,9 +8,16 @@ public class Nod {
     private static final int MAX = 50;
 
     public static void start() {
-        String[][] fullText = make();
+        String[][] data = new String[Engine.COUNT_OF_ATTEMPTS][Engine.COUNT_OF_DATA];
+        for (int i = 0; i < data.length; i++) {
+            int operand1 = Utils.getRandomNumber(MIN, MAX);
+            int operand2 = Utils.getRandomNumber(MIN, MAX);
+            String result = Integer.toString(getNod(operand1, operand2));
+            data[i][0] = operand1 + " " + operand2;
+            data[i][1] = result;
+        }
         String rule = "Find the greatest common divisor of given numbers.";
-        Engine.review(fullText, rule);
+        Engine.review(data, rule);
     }
 
     private static int getNod(int operand1, int operand2) {
@@ -35,18 +42,5 @@ public class Nod {
             }
         }
         return nod;
-    }
-
-    public static String[][] make() {
-        String[][] fullText = new String[Engine.COUNT_OF_ATTEMPTS][Engine.COUNT_OF_QUESTIONS];
-        for (int i = 0; i < fullText.length; i++) {
-            for (int j = 0; j < fullText[i].length; j++) {
-                int operand1 = Utils.getRandomNumber(MIN, MAX);
-                int operand2 = Utils.getRandomNumber(MIN, MAX);
-                String result = Integer.toString(getNod(operand1, operand2));
-                fullText[i][j] = operand1 + " " + operand2 + ":" + result;
-            }
-        }
-        return fullText;
     }
 }

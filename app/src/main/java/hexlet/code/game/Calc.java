@@ -27,10 +27,7 @@ public class Calc {
             case '-' -> Integer.toString(operand1 - operand2);
             case '+' -> Integer.toString(operand1 + operand2);
             case '*' -> Integer.toString(operand1 * operand2);
-            default -> {
-                System.out.println("Operation is not supported.");
-                System.exit(1);
-            }
+            default -> throw new RuntimeException("Operation is not supported.");
         };
     }
 }

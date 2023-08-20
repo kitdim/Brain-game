@@ -8,24 +8,18 @@ public class Even {
     private static final int MIN = 0;
     private static final int MAX = 50;
     public static void start() {
-        String[][] fullText = make();
+        String[][] data = new String[Engine.COUNT_OF_ATTEMPTS][Engine.COUNT_OF_DATA];
+        for (int i = 0; i < data.length; i++) {
+            int operand = Utils.getRandomNumber(MIN, MAX);
+            String result = isEven(operand) ? "yes" : "no";
+            data[i][0] = Integer.toString(operand);
+            data[i][1] = result;
+        }
         String rule = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        Engine.review(fullText, rule);
+        Engine.review(data, rule);
     }
 
     public static boolean isEven(int operand) {
         return operand % 2 == 0;
-    }
-    public static String[][] make() {
-        String[][] fullText = new String[Engine.COUNT_OF_ATTEMPTS][Engine.COUNT_OF_QUESTIONS];
-        for (int i = 0; i < fullText.length; ++i) {
-            for (int j = 0; j < fullText[i].length; ++j) {
-                int operand = Utils.getRandomNumber(MIN, MAX);
-                String question = Integer.toString(operand);
-                String result = isEven(operand) ? "yes" : "no";
-                fullText[i][j] = question + ":" + result;
-            }
-        }
-        return fullText;
     }
 }

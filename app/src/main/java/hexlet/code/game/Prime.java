@@ -9,9 +9,15 @@ public class Prime {
     private static final int MAX = 50;
 
     public static void start() {
-        String[][] fullText = make();
+        String[][] data = new String[Engine.COUNT_OF_ATTEMPTS][Engine.COUNT_OF_DATA];
+        for (int i = 0; i < data.length; i++) {
+            int operand = Utils.getRandomNumber(MIN, MAX);
+            String result = isPrime(operand) ? "yes" : "no";
+            data[i][0] = Integer.toString(operand);
+            data[i][1] = result;
+        }
         String rule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        Engine.review(fullText, rule);
+        Engine.review(data, rule);
     }
 
     private static boolean isPrime(int number) {
@@ -24,17 +30,5 @@ public class Prime {
             }
         }
         return true;
-    }
-    private static String[][] make() {
-        String[][] fullText = new String[Engine.COUNT_OF_ATTEMPTS][Engine.COUNT_OF_QUESTIONS];
-        for (int i = 0; i < fullText.length; ++i) {
-            for (int j = 0; j < fullText[i].length; ++j) {
-                int operand = Utils.getRandomNumber(MIN, MAX);
-                String question = Integer.toString(operand);
-                String result = isPrime(operand) ? "yes" : "no";
-                fullText[i][j] = question + ":" + result;
-            }
-        }
-        return fullText;
     }
 }
