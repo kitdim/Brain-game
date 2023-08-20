@@ -4,16 +4,16 @@ import java.util.Scanner;
 
 public class Engine {
     public static final byte COUNT_OF_ATTEMPTS = 3;
-    public static final byte COUNT_OF_QUESTIONS = 1;
+    public static final byte COUNT_OF_DATA = 2;
 
-    public static void review(String[][] fullText, String rule) {
+    public static void review(String[][] data, String rule) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("May I have your name? ");
         String userName = scanner.next();
         System.out.println("Hello, " + userName + "!");
         System.out.println(rule);
         int countBadAnswers = 0;
-        for (String[] strings : fullText) {
+        for (String[] strings : data) {
             if (countBadAnswers > 0) {
                 break;
             }
