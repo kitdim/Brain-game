@@ -24,7 +24,12 @@ public class Nod {
     }
 
     private static int getNod(int number1, int number2) {
-        return number1 == 0 ? number1 : getNod(number2, number1 % number2);
+        while (number2 != 0) {
+            int tmp = number1 % number2;
+            number1 = number2;
+            number2 = tmp;
+        }
+        return number1;
     }
 
     private static String getRules() {
