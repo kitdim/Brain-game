@@ -24,10 +24,9 @@ public class Progression {
             for (int j = 0; j < length; j++) {
                 progression[j] = Integer.toString(startItem * (j + 1));
             }
-            String result = progression[randIndex];
+            data[i][ANSWER] = progression[randIndex];
             progression[randIndex] = "..";
             data[i][QUESTION] = String.join(" ", progression);
-            data[i][ANSWER] = result;
         }
         Engine.review(data, getRules());
     }
