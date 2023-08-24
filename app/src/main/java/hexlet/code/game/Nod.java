@@ -3,44 +3,31 @@ package hexlet.code.game;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
+import static hexlet.code.Engine.QUESTION;
+import static hexlet.code.Engine.ANSWER;
+import static hexlet.code.Engine.COUNT_OF_DATA;
+import static hexlet.code.Engine.NUMBER_OF_ATTEMPTS;
+
 public class Nod {
-    private static final int MIN = 0;
+    private static final int MIN = 1;
     private static final int MAX = 50;
 
     public static void start() {
-        String[][] data = new String[Engine.COUNT_OF_ATTEMPTS][Engine.COUNT_OF_DATA];
+        String[][] data = new String[NUMBER_OF_ATTEMPTS][COUNT_OF_DATA];
         for (int i = 0; i < data.length; i++) {
-            int operand1 = Utils.getRandomNumber(MIN, MAX);
-            int operand2 = Utils.getRandomNumber(MIN, MAX);
-            String result = Integer.toString(getNod(operand1, operand2));
-            data[i][0] = operand1 + " " + operand2;
-            data[i][1] = result;
+            int number1 = Utils.getRandomNumber(MIN, MAX);
+            int number2 = Utils.getRandomNumber(MIN, MAX);
+            data[i][QUESTION] = number1 + " " + number2;
+            data[i][ANSWER] = Integer.toString(getNod(number1, number2));
         }
-        String rule = "Find the greatest common divisor of given numbers.";
-        Engine.review(data, rule);
+        Engine.review(data, getRules());
     }
 
-    private static int getNod(int operand1, int operand2) {
-        if (operand1 == 0 && operand2 == 0) {
-            return 0;
-        }
-        if (operand1 == 0) {
-            return operand2;
-        } else if (operand2 == 0) {
-            return operand1;
-        }
-        int nod = 0;
-        if (operand1 < operand2) {
-            operand1 += operand2;
-            operand2 = operand1 - operand2;
-            operand1 -= operand2;
-        }
+    private static int getNod(int number1, int number2) {
+        return number1 == 0 ? number1 : getNod(number2, number1 % number2);
+    }
 
-        for (int i = 1; i <= operand2; i++) {
-            if (operand1 % i == 0 && operand2 % i == 0) {
-                nod = i;
-            }
-        }
-        return nod;
+    private static String getRules() {
+        return "Find the greatest common divisor of given numbers.";
     }
 }

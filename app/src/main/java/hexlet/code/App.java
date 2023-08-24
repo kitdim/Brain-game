@@ -9,12 +9,12 @@ import hexlet.code.game.Even;
 import java.util.Scanner;
 
 public class App {
-    public static final Integer GREET = 1;
-    public static final Integer EVEN = 2;
-    public static final Integer CALC = 3;
-    public static final Integer NOD = 4;
-    public static final Integer PROGRESSION = 5;
-    public static final Integer PRIME = 6;
+    public static final int GREET = 1;
+    public static final int EVEN = 2;
+    public static final int CALC = 3;
+    public static final int NOD = 4;
+    public static final int PROGRESSION = 5;
+    public static final int PRIME = 6;
 
     public static void main(String[] args) {
         System.out.println("Welcome to the Brain Games!");
@@ -29,20 +29,17 @@ public class App {
                 0 - Exit""");
         System.out.print("Your change: ");
         Scanner input = new Scanner(System.in);
-        int numberGame = Integer.parseInt(input.next());
+        int numberGame = input.nextInt();
         System.out.println();
-        if (numberGame == GREET) {
-            Cli.greet();
-        } else if (numberGame == EVEN) {
-            Even.start();
-        } else if (numberGame == CALC) {
-            Calc.start();
-        } else if (numberGame == NOD) {
-            Nod.start();
-        } else if (numberGame == PROGRESSION) {
-            Progression.start();
-        } else if (numberGame == PRIME) {
-            Prime.start();
+        switch (numberGame) {
+            case GREET -> Cli.greet();
+            case EVEN -> Even.start();
+            case CALC -> Calc.start();
+            case NOD -> Nod.start();
+            case PROGRESSION -> Progression.start();
+            case PRIME -> Prime.start();
+            default -> {
+            }
         }
     }
 }

@@ -3,6 +3,11 @@ package hexlet.code.game;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
+import static hexlet.code.Engine.QUESTION;
+import static hexlet.code.Engine.ANSWER;
+import static hexlet.code.Engine.COUNT_OF_DATA;
+import static hexlet.code.Engine.NUMBER_OF_ATTEMPTS;
+
 public class Progression {
     private static final int MIN_LENGTH = 5;
     private static final int MAX_LENGTH = 10;
@@ -10,7 +15,7 @@ public class Progression {
     private static final int MAX = 20;
 
     public static void start() {
-        String[][] data = new String[Engine.COUNT_OF_ATTEMPTS][Engine.COUNT_OF_DATA];
+        String[][] data = new String[NUMBER_OF_ATTEMPTS][COUNT_OF_DATA];
         for (int i = 0; i < data.length; i++) {
             int length = Utils.getRandomNumber(MIN_LENGTH, MAX_LENGTH);
             int startItem = Utils.getRandomNumber(MIN, MAX);
@@ -19,12 +24,14 @@ public class Progression {
             for (int j = 0; j < length; j++) {
                 progression[j] = Integer.toString(startItem * (j + 1));
             }
-            String result = progression[randIndex];
             progression[randIndex] = "..";
-            data[i][0] = String.join(" ", progression);
-            data[i][1] = result;
+            data[i][QUESTION] = String.join(" ", progression);
+            data[i][ANSWER] = progression[randIndex];
         }
-        String rule = "What number is missing in the progression?";
-        Engine.review(data, rule);
+        Engine.review(data, getRules());
+    }
+
+    private static String getRules() {
+        return "What number is missing in the progression?";
     }
 }
