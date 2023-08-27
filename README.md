@@ -3,7 +3,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/466e32da2c47732c7d19/maintainability)](https://codeclimate.com/github/kitdim/java-project-61/maintainability)
 
 ## Example
-
+[![asciicast](https://asciinema.org/a/604857.svg)](https://asciinema.org/a/604857)
 
 ## Setup
 
