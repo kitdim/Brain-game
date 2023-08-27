@@ -11,20 +11,27 @@
 make build
 ```
 
+## Install
+
+```bash
+make install
+```
+
+## Clean
+
+```bash
+make clean
+```
+
+## Run wish Gradle
+
+```bash
+make run
+```
+
 ## Run
 
 ```bash
-make run-dist
-```
-
-## Run checkstyle
-
-```bash
-make lint
-```
-
-## Check update dependencies and plugins
-
-```bash
-make update
+run-dist:
+	@./build/install/app/bin/app
 ```
