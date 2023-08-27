@@ -17,12 +17,6 @@ make build
 make run-dist
 ```
 
-## Run tests
-
-```bash
-make test
-```
-
 ## Run checkstyle
 
 ```bash
