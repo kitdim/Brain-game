@@ -32,6 +32,5 @@ make run
 ## Run
 
 ```bash
-run-dist:
-	@./build/install/app/bin/app
+make run-dist
 ```
