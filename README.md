@@ -32,7 +32,7 @@ make install
 make clean
 ```
 
-## Run wish Gradle
+## Run with Gradle
 
 ```bash
 make run
