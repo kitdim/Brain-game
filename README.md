@@ -14,7 +14,7 @@
 ## Example
 [![asciicast](https://asciinema.org/a/604857.svg)](https://asciinema.org/a/604857)
 
-## Setup
+## Build
 
 ```bash
 make build
@@ -26,20 +26,14 @@ make build
 make install
 ```
 
-## Clean
-
-```bash
-make clean
-```
-
-## Run with Gradle
-
-```bash
-make run
-```
-
 ## Run
 
 ```bash
 make run-dist
+```
+
+## Clean
+
+```bash
+make clean
 ```
