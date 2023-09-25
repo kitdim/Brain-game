@@ -2,14 +2,14 @@
 [![Actions Status](https://github.com/kitdim/java-project-61/workflows/hexlet-check/badge.svg)](https://github.com/kitdim/java-project-61/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/466e32da2c47732c7d19/maintainability)](https://codeclimate.com/github/kitdim/java-project-61/maintainability)
 
-«Brain games» — набор из пяти консольных игр, построенных по принципу популярных мобильных приложений для прокачки мозга. Каждая игра задает вопросы, на которые нужно дать правильные ответы. После трех правильных ответов считается, что игра пройдена. Неправильные ответы завершают игру и предлагают пройти ее заново.
+«Brain games» — is a set of five console games built on the principle of popular mobile applications for brain training. Each game asks questions that must be answered correctly. After three correct answers, the game is considered completed. Wrong answers end the game and prompt you to play it again.
 <br/>
-Игры:
-<br/>- Калькулятор. Арифметические выражения, которые необходимо вычислить.
-<br/>- Прогрессия. Поиск пропущенных чисел в последовательности чисел.
-<br/>- Определение четного числа.
-<br/>- Определение наибольшего общего делителя.
-<br/>- Определение простого числа.
+Games:
+<br/>- Calculator. Arithmetic expressions to be evaluated.
+<br/>- Progression. Finding missing numbers in a sequence of numbers.
+<br/>- Determination of an even number.
+<br/>- Determination of the greatest common divisor.
+<br/>- Definition of a prime number.
     
 ## Example
 [![asciicast](https://asciinema.org/a/604857.svg)](https://asciinema.org/a/604857)
